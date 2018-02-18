@@ -53,45 +53,49 @@
         <scene sceneID="fwW-Af-Rbv">
             <objects>
                 <viewController id="xXY-T3-FAS" customClass="PopupViewController" customModule="RiverOakRegistration" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YAU-vP-HjM">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="1Pb-7e-gZE">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kiS-bB-dxI">
-                                <rect key="frame" x="50" y="50" width="668" height="944"/>
-                                <subviews>
-                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RA0-h2-FJH">
-                                        <rect key="frame" x="0.0" y="30" width="668" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <items>
-                                            <navigationItem title="Title" id="toU-BE-zt3">
-                                                <barButtonItem key="leftBarButtonItem" systemItem="done" id="bpF-M6-cXf">
-                                                    <connections>
-                                                        <action selector="dismissPopup:" destination="xXY-T3-FAS" id="c0B-ZK-L7s"/>
-                                                    </connections>
-                                                </barButtonItem>
-                                            </navigationItem>
-                                        </items>
-                                    </navigationBar>
-                                </subviews>
-                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="kiS-bB-dxI" firstAttribute="top" secondItem="l8v-DF-6LN" secondAttribute="top" constant="30" id="1Q5-6C-iNL"/>
-                            <constraint firstItem="l8v-DF-6LN" firstAttribute="trailing" secondItem="kiS-bB-dxI" secondAttribute="trailing" constant="50" id="Ksz-by-ZLB"/>
-                            <constraint firstItem="kiS-bB-dxI" firstAttribute="leading" secondItem="l8v-DF-6LN" secondAttribute="leading" constant="50" id="cir-9h-XT3"/>
-                            <constraint firstItem="l8v-DF-6LN" firstAttribute="bottom" secondItem="kiS-bB-dxI" secondAttribute="bottom" constant="30" id="uf4-mY-Eoe"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="l8v-DF-6LN"/>
-                    </view>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GFL-bl-bFT">
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rc3-B3-I1Q" userLabel="Popup">
+                                    <rect key="frame" x="50" y="50" width="668" height="924"/>
+                                    <subviews>
+                                        <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n3x-iR-fmc">
+                                            <rect key="frame" x="0.0" y="38" width="668" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <items>
+                                                <navigationItem title="Registration Details" id="J5h-GG-zcn">
+                                                    <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="W3E-cj-1hf">
+                                                        <connections>
+                                                            <action selector="dismissPopup:" destination="xXY-T3-FAS" id="wFz-4i-QRt"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                </navigationItem>
+                                            </items>
+                                        </navigationBar>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="rc3-B3-I1Q" secondAttribute="trailing" constant="50" id="60P-le-S7V"/>
+                                <constraint firstAttribute="bottom" secondItem="rc3-B3-I1Q" secondAttribute="bottom" constant="50" id="b8H-2l-yu9"/>
+                                <constraint firstItem="rc3-B3-I1Q" firstAttribute="top" secondItem="GFL-bl-bFT" secondAttribute="top" constant="50" id="m5G-Cg-1Ru"/>
+                                <constraint firstItem="rc3-B3-I1Q" firstAttribute="leading" secondItem="GFL-bl-bFT" secondAttribute="leading" constant="50" id="pSI-pR-VGb"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
                     <connections>
-                        <outlet property="popupView" destination="kiS-bB-dxI" id="HRf-cJ-WNR"/>
+                        <outlet property="popupView" destination="rc3-B3-I1Q" id="lS1-mJ-C8m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4j-cV-iUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864.74820143884904" y="117.08633093525181"/>
+            <point key="canvasLocation" x="864.0625" y="116.60156249999999"/>
         </scene>
     </scenes>
     <resources>
