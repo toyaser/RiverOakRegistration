@@ -13,6 +13,7 @@ class PopupViewController: UIViewController {
     @IBOutlet var popupView: UIView!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var nameUserTextField: UITextField!
+    @IBOutlet weak var headerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,11 @@ class PopupViewController: UIViewController {
     
     func setupAddTargetIsNotEmptyTextFields() {
         doneBarButton.isEnabled = false
+        
+        headerView.clipsToBounds = true
+        headerView.layer.cornerRadius = 5
+        headerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
         nameUserTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
 //        emailUserTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty),
 //                                     for: .editingChanged)

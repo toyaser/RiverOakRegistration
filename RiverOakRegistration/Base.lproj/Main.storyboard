@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,7 +64,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rc3-B3-I1Q" userLabel="Popup">
                                     <rect key="frame" x="50" y="50" width="668" height="874"/>
                                     <subviews>
-                                        <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3x-iR-fmc">
+                                        <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3x-iR-fmc">
                                             <rect key="frame" x="0.0" y="38" width="668" height="44"/>
                                             <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <items>
@@ -77,10 +78,10 @@
                                                 </navigationItem>
                                             </items>
                                         </navigationBar>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3B-h4-pat">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y3B-h4-pat">
                                             <rect key="frame" x="0.0" y="109" width="668" height="47"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSv-6o-xgd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSv-6o-xgd">
                                                     <rect key="frame" x="16" y="13" width="53" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="07F-f5-D9L"/>
@@ -90,7 +91,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pyA-ke-mRi">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pyA-ke-mRi">
                                                     <rect key="frame" x="77" y="8" width="591" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="591" id="ifX-4f-8qT"/>
@@ -103,21 +104,50 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="pyA-ke-mRi" firstAttribute="leading" secondItem="CSv-6o-xgd" secondAttribute="trailing" constant="8" symbolic="YES" id="1Jy-4U-4AB"/>
+                                                <constraint firstItem="pyA-ke-mRi" firstAttribute="centerY" secondItem="y3B-h4-pat" secondAttribute="centerY" id="63N-5x-KIm"/>
+                                                <constraint firstItem="pyA-ke-mRi" firstAttribute="top" secondItem="y3B-h4-pat" secondAttribute="topMargin" id="Oq7-GQ-8Dy"/>
+                                                <constraint firstItem="CSv-6o-xgd" firstAttribute="top" secondItem="y3B-h4-pat" secondAttribute="top" constant="13" id="Rpp-mh-DUt"/>
+                                                <constraint firstAttribute="trailing" secondItem="pyA-ke-mRi" secondAttribute="trailing" id="gjB-ie-xt3"/>
+                                                <constraint firstItem="CSv-6o-xgd" firstAttribute="leading" secondItem="y3B-h4-pat" secondAttribute="leading" constant="16" id="iaM-cI-w9H"/>
+                                                <constraint firstAttribute="height" constant="47" id="k7g-Kl-Uxo"/>
+                                                <constraint firstAttribute="width" constant="668" id="l3C-T2-9uM"/>
                                                 <constraint firstItem="pyA-ke-mRi" firstAttribute="centerY" secondItem="CSv-6o-xgd" secondAttribute="centerY" id="nWY-c2-kId"/>
                                                 <constraint firstItem="pyA-ke-mRi" firstAttribute="leading" secondItem="CSv-6o-xgd" secondAttribute="trailing" constant="8" id="sJ6-Qg-2o6"/>
+                                                <constraint firstAttribute="bottom" secondItem="CSv-6o-xgd" secondAttribute="bottom" constant="13" id="wSk-CH-OGs"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35j-uy-Fyo" userLabel="Header">
+                                            <rect key="frame" x="0.0" y="0.0" width="668" height="38"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter registration details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHT-iy-fhV">
+                                                    <rect key="frame" x="241" y="9" width="186.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="pHT-iy-fhV" firstAttribute="centerX" secondItem="35j-uy-Fyo" secondAttribute="centerX" id="54C-Ja-iu7"/>
+                                                <constraint firstItem="pHT-iy-fhV" firstAttribute="centerY" secondItem="35j-uy-Fyo" secondAttribute="centerY" id="W4b-Qj-FiH"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="n3x-iR-fmc" firstAttribute="top" secondItem="rc3-B3-I1Q" secondAttribute="top" constant="38" id="3Ct-N3-9c5"/>
+                                        <constraint firstItem="n3x-iR-fmc" firstAttribute="leading" secondItem="y3B-h4-pat" secondAttribute="leading" id="4Om-JZ-H02"/>
                                         <constraint firstItem="n3x-iR-fmc" firstAttribute="leading" secondItem="rc3-B3-I1Q" secondAttribute="leading" id="8bW-dv-LMs"/>
-                                        <constraint firstAttribute="bottom" secondItem="y3B-h4-pat" secondAttribute="bottom" constant="718" id="Eda-LL-Dv0"/>
+                                        <constraint firstItem="n3x-iR-fmc" firstAttribute="trailing" secondItem="y3B-h4-pat" secondAttribute="trailing" id="Cwx-Go-MV7"/>
+                                        <constraint firstAttribute="trailing" secondItem="y3B-h4-pat" secondAttribute="trailing" id="IGX-5m-JCJ"/>
+                                        <constraint firstItem="35j-uy-Fyo" firstAttribute="top" secondItem="rc3-B3-I1Q" secondAttribute="top" id="Lnm-FW-SIp"/>
                                         <constraint firstItem="n3x-iR-fmc" firstAttribute="leading" secondItem="rc3-B3-I1Q" secondAttribute="leading" id="Url-hB-9tE"/>
-                                        <constraint firstItem="y3B-h4-pat" firstAttribute="trailing" secondItem="n3x-iR-fmc" secondAttribute="trailing" id="Wss-Jm-pfG"/>
-                                        <constraint firstItem="y3B-h4-pat" firstAttribute="leading" secondItem="n3x-iR-fmc" secondAttribute="leading" id="Zyh-KZ-dXe"/>
-                                        <constraint firstItem="y3B-h4-pat" firstAttribute="top" secondItem="n3x-iR-fmc" secondAttribute="bottom" constant="27" id="eCD-T2-etw"/>
+                                        <constraint firstItem="n3x-iR-fmc" firstAttribute="top" secondItem="35j-uy-Fyo" secondAttribute="bottom" id="b0R-Rv-OSR"/>
+                                        <constraint firstItem="y3B-h4-pat" firstAttribute="top" secondItem="n3x-iR-fmc" secondAttribute="bottom" constant="49" id="ddY-jv-hwD"/>
                                         <constraint firstAttribute="trailing" secondItem="n3x-iR-fmc" secondAttribute="trailing" id="gdI-Pq-9IT"/>
+                                        <constraint firstItem="35j-uy-Fyo" firstAttribute="leading" secondItem="rc3-B3-I1Q" secondAttribute="leading" id="ou5-GB-X40"/>
+                                        <constraint firstItem="y3B-h4-pat" firstAttribute="leading" secondItem="rc3-B3-I1Q" secondAttribute="leading" id="sg5-5K-fsi"/>
+                                        <constraint firstAttribute="trailing" secondItem="35j-uy-Fyo" secondAttribute="trailing" id="tqK-I4-Vrp"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -132,6 +162,7 @@
                     </visualEffectView>
                     <connections>
                         <outlet property="doneBarButton" destination="Hrj-0n-MZg" id="wqH-xk-MBO"/>
+                        <outlet property="headerView" destination="35j-uy-Fyo" id="6EB-KK-dFe"/>
                         <outlet property="nameUserTextField" destination="pyA-ke-mRi" id="r16-lG-1v0"/>
                         <outlet property="popupView" destination="rc3-B3-I1Q" id="lS1-mJ-C8m"/>
                     </connections>
