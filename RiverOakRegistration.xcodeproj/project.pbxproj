@@ -12,6 +12,8 @@
 		43A1C962203A087600C6BF7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A1C960203A087600C6BF7A /* Main.storyboard */; };
 		43A1C964203A087600C6BF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A1C963203A087600C6BF7A /* Assets.xcassets */; };
 		43A1C967203A087600C6BF7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A1C965203A087600C6BF7A /* LaunchScreen.storyboard */; };
+		43DBB24E203A16EF00AFB1FE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBB24D203A16EF00AFB1FE /* DesignableView.swift */; };
+		43DBB250203A1B7400AFB1FE /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBB24F203A1B7400AFB1FE /* PopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		43A1C963203A087600C6BF7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43A1C966203A087600C6BF7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43A1C968203A087600C6BF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43DBB24D203A16EF00AFB1FE /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		43DBB24F203A1B7400AFB1FE /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		43A1C95B203A087600C6BF7A /* RiverOakRegistration */ = {
 			isa = PBXGroup;
 			children = (
+				43DBB24C203A16BD00AFB1FE /* IBDesignables */,
 				43A1C95C203A087600C6BF7A /* AppDelegate.swift */,
 				43A1C95E203A087600C6BF7A /* ViewController.swift */,
 				43A1C960203A087600C6BF7A /* Main.storyboard */,
 				43A1C963203A087600C6BF7A /* Assets.xcassets */,
 				43A1C965203A087600C6BF7A /* LaunchScreen.storyboard */,
 				43A1C968203A087600C6BF7A /* Info.plist */,
+				43DBB24F203A1B7400AFB1FE /* PopupViewController.swift */,
 			);
 			path = RiverOakRegistration;
+			sourceTree = "<group>";
+		};
+		43DBB24C203A16BD00AFB1FE /* IBDesignables */ = {
+			isa = PBXGroup;
+			children = (
+				43DBB24D203A16EF00AFB1FE /* DesignableView.swift */,
+			);
+			path = IBDesignables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +152,8 @@
 			files = (
 				43A1C95F203A087600C6BF7A /* ViewController.swift in Sources */,
 				43A1C95D203A087600C6BF7A /* AppDelegate.swift in Sources */,
+				43DBB24E203A16EF00AFB1FE /* DesignableView.swift in Sources */,
+				43DBB250203A1B7400AFB1FE /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +296,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.primatesletsrejoice.RiverOakRegistration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -294,7 +310,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.primatesletsrejoice.RiverOakRegistration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
