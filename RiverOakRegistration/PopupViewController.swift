@@ -11,6 +11,8 @@ import UIKit
 class PopupViewController: UIViewController {
 
     @IBOutlet var popupView: UIView!
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet weak var nameUserTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,34 @@ class PopupViewController: UIViewController {
         self.popupView.layer.cornerRadius = 5;
         self.popupView.layer.shadowOpacity = 0.8;
         self.popupView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        
+        setupAddTargetIsNotEmptyTextFields()
         // Do any additional setup after loading the view.
+    }
+    
+    func setupAddTargetIsNotEmptyTextFields() {
+        doneBarButton.isEnabled = false
+        nameUserTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+//        emailUserTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty),
+//                                     for: .editingChanged)
+//        passwordUserTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty),
+//                                        for: .editingChanged)
+//        confimPasswordUserTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty),
+//                                              for: .editingChanged)
+    }
+    
+    @objc func editingChanged(_ textField: UITextField) {
+        if (nameUserTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty)! {
+            // string contains non-whitespace characters
+            return
+        }
+        guard
+            let name = nameUserTextField.text, !name.isEmpty
+        else {
+                doneBarButton.isEnabled = false
+                return
+        }
+        doneBarButton.isEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
