@@ -29,14 +29,27 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="river oak" translatesAutoresizingMaskIntoConstraints="NO" id="Nac-08-6Af">
                                 <rect key="frame" x="264" y="92" width="240" height="657"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rew-wK-anc">
-                                <rect key="frame" x="338" y="925" width="132" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.073331795632839203" green="0.081678666174411774" blue="0.12768629193305969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rew-wK-anc" customClass="DesignableButton" customModule="RiverOakRegistration" customModuleProvider="target">
+                                <rect key="frame" x="321" y="929" width="126" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="126" id="Bau-oN-AcZ"/>
+                                    <constraint firstAttribute="width" constant="126" id="FPx-qd-8nK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="xXY-T3-FAS" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="raN-VZ-fnV"/>
                                 </connections>
@@ -46,8 +59,11 @@
                         <constraints>
                             <constraint firstItem="Nac-08-6Af" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="07l-Te-wEX"/>
                             <constraint firstItem="1sj-c5-Shd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5yN-4g-Dqx"/>
+                            <constraint firstItem="Rew-wK-anc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="88g-XE-YqH"/>
+                            <constraint firstItem="Rew-wK-anc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9AV-KQ-ezP"/>
                             <constraint firstItem="Nac-08-6Af" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EeY-qh-mbS"/>
                             <constraint firstItem="1sj-c5-Shd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HZq-XV-MGl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rew-wK-anc" secondAttribute="bottom" constant="49" id="W1T-Vk-gQm"/>
                             <constraint firstItem="Nac-08-6Af" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="264" id="inJ-NX-bX6"/>
                             <constraint firstItem="1sj-c5-Shd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jjJ-OL-4h5"/>
                             <constraint firstItem="1sj-c5-Shd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pCO-29-4af"/>
@@ -55,6 +71,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="signInButton" destination="Rew-wK-anc" id="i1O-iF-2gY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +124,7 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bia-it-b8x">
-                                            <rect key="frame" x="0.0" y="102" width="668" height="120"/>
+                                            <rect key="frame" x="0.0" y="102" width="668" height="190"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3B-h4-pat">
                                                     <rect key="frame" x="0.0" y="0.0" width="668" height="50"/>
@@ -153,6 +172,29 @@
                                                         <constraint firstAttribute="height" constant="50" id="7Ib-9p-viV"/>
                                                     </constraints>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCs-2b-He5">
+                                                    <rect key="frame" x="0.0" y="140" width="668" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZI-cU-eTo">
+                                                            <rect key="frame" x="16" y="14" width="93" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n32-Gv-u2H">
+                                                            <rect key="frame" x="122" y="8" width="548" height="31"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="cIj-7L-a3L"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </stackView>
                                     </subviews>
@@ -183,6 +225,7 @@
                     </visualEffectView>
                     <connections>
                         <outlet property="doneBarButton" destination="Hrj-0n-MZg" id="wqH-xk-MBO"/>
+                        <outlet property="emailTextField" destination="n32-Gv-u2H" id="89U-MB-hlp"/>
                         <outlet property="headerView" destination="35j-uy-Fyo" id="6EB-KK-dFe"/>
                         <outlet property="nameUserTextField" destination="pyA-ke-mRi" id="r16-lG-1v0"/>
                         <outlet property="popupView" destination="rc3-B3-I1Q" id="lS1-mJ-C8m"/>

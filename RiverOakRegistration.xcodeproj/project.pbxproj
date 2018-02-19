@@ -14,6 +14,7 @@
 		43A1C967203A087600C6BF7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A1C965203A087600C6BF7A /* LaunchScreen.storyboard */; };
 		43DBB24E203A16EF00AFB1FE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBB24D203A16EF00AFB1FE /* DesignableView.swift */; };
 		43DBB250203A1B7400AFB1FE /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DBB24F203A1B7400AFB1FE /* PopupViewController.swift */; };
+		43F73C6D203A6AC4007DB16D /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F73C6C203A6AC4007DB16D /* DesignableButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		43A1C968203A087600C6BF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43DBB24D203A16EF00AFB1FE /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		43DBB24F203A1B7400AFB1FE /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		43F73C6C203A6AC4007DB16D /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				43DBB24D203A16EF00AFB1FE /* DesignableView.swift */,
+				43F73C6C203A6AC4007DB16D /* DesignableButton.swift */,
 			);
 			path = IBDesignables;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				43A1C95F203A087600C6BF7A /* ViewController.swift in Sources */,
 				43A1C95D203A087600C6BF7A /* AppDelegate.swift in Sources */,
 				43DBB24E203A16EF00AFB1FE /* DesignableView.swift in Sources */,
+				43F73C6D203A6AC4007DB16D /* DesignableButton.swift in Sources */,
 				43DBB250203A1B7400AFB1FE /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

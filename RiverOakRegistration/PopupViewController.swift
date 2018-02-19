@@ -14,6 +14,7 @@ class PopupViewController: UIViewController {
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var nameUserTextField: UITextField!
     @IBOutlet weak var postalCodeTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var headerView: UIView!
     
     override func viewDidLoad() {
@@ -36,6 +37,7 @@ class PopupViewController: UIViewController {
         
         nameUserTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         postalCodeTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        emailTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
 //        emailUserTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty),
 //                                     for: .editingChanged)
 //        passwordUserTextField.addTarget(self, action: #selector(textFieldsIsNotEmpty),
@@ -46,13 +48,15 @@ class PopupViewController: UIViewController {
     
     @objc func editingChanged(_ textField: UITextField) {
         if (nameUserTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty)! &&
-            (postalCodeTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty)! {
+            (postalCodeTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty)! &&
+            (emailTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty)! {
             // string contains non-whitespace characters
             return
         }
         guard
             let name = nameUserTextField.text, !name.isEmpty,
-            let postalCode = postalCodeTextField.text, !postalCode.isEmpty
+            let postalCode = postalCodeTextField.text, !postalCode.isEmpty,
+            let email = emailTextField.text, !email.isEmpty
         else {
                 doneBarButton.isEnabled = false
                 return
