@@ -26,7 +26,13 @@ class FormTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "formCell")
+        tableView.delegate = self
+        tableView.dataSource = self
     }
+    
+    // how to add text to disclosure https://stackoverflow.com/a/35400276/3322417
     
     func setupAddTargetIsNotEmptyTextFields() {
         doneBarButton.isEnabled = false
@@ -52,22 +58,20 @@ class FormTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 4
-    }
-    
-    // Set the spacing between sections
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return cellSpacingHeight
     }
 
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 4
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 4
+//    }
+    
     @IBAction func dismissPopup(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
