@@ -27,9 +27,7 @@ class FormTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "formCell")
-        tableView.delegate = self
-        tableView.dataSource = self
+//        tableView.allowsSelection = false
     }
     
     // how to add text to disclosure https://stackoverflow.com/a/35400276/3322417
