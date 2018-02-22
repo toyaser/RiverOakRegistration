@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FormTableViewController: UITableViewController {
+class FormTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var nameUserTextField: UITextField!
@@ -19,6 +19,7 @@ class FormTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupAddTargetIsNotEmptyTextFields()
 
         // Uncomment the following line to preserve selection between presentations
@@ -61,13 +62,13 @@ class FormTableViewController: UITableViewController {
 //    }
     
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
+//
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "formCell", for: indexPath)
-//        
+//
 //        cell.selectionStyle = .none
-//        
+//
 //        return cell
-//        
+//
 //    }
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,6 +80,19 @@ class FormTableViewController: UITableViewController {
 //        // #warning Incomplete implementation, return the number of rows
 //        return 4
 //    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameUserTextField {
+            textField.resignFirstResponder()
+            postalCodeTextField.becomeFirstResponder()
+        } else if textField == postalCodeTextField {
+            textField.resignFirstResponder()
+            emailTextField.becomeFirstResponder()
+        } else if textField == emailTextField {
+            nameUserTextField.resignFirstResponder()
+        }
+        return true
+    }
     
     @IBAction func dismissPopup(_ sender: Any) {
         dismiss(animated: true, completion: nil)

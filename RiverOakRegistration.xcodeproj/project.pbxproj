@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		435C902E203E5E3700D49E0B /* HearAboutUsOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435C902D203E5E3700D49E0B /* HearAboutUsOptionsTableViewController.swift */; };
 		43A1C95D203A087600C6BF7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A1C95C203A087600C6BF7A /* AppDelegate.swift */; };
 		43A1C95F203A087600C6BF7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A1C95E203A087600C6BF7A /* ViewController.swift */; };
 		43A1C962203A087600C6BF7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A1C960203A087600C6BF7A /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		435C902D203E5E3700D49E0B /* HearAboutUsOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearAboutUsOptionsTableViewController.swift; sourceTree = "<group>"; };
 		43A1C959203A087600C6BF7A /* RiverOakRegistration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiverOakRegistration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A1C95C203A087600C6BF7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A1C95E203A087600C6BF7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				43A1C968203A087600C6BF7A /* Info.plist */,
 				43DBB24F203A1B7400AFB1FE /* PopupViewController.swift */,
 				43CE7576203B6A7600B36916 /* FormTableViewController.swift */,
+				435C902D203E5E3700D49E0B /* HearAboutUsOptionsTableViewController.swift */,
 			);
 			path = RiverOakRegistration;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				43A1C95F203A087600C6BF7A /* ViewController.swift in Sources */,
 				43CE7577203B6A7600B36916 /* FormTableViewController.swift in Sources */,
 				43A1C95D203A087600C6BF7A /* AppDelegate.swift in Sources */,
+				435C902E203E5E3700D49E0B /* HearAboutUsOptionsTableViewController.swift in Sources */,
 				43DBB24E203A16EF00AFB1FE /* DesignableView.swift in Sources */,
 				43F73C6D203A6AC4007DB16D /* DesignableButton.swift in Sources */,
 				43DBB250203A1B7400AFB1FE /* PopupViewController.swift in Sources */,
