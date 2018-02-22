@@ -56,9 +56,19 @@ class FormTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return cellSpacingHeight
-    }
+//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return cellSpacingHeight
+//    }
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "formCell", for: indexPath)
+//        
+//        cell.selectionStyle = .none
+//        
+//        return cell
+//        
+//    }
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections
