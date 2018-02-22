@@ -14,6 +14,9 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var nameUserTextField: UITextField!
     @IBOutlet weak var postalCodeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var howDidYouHearAboutUsCell: UITableViewCell!
+    
+    var selectedOptionFromHearAboutUsOptions : String?
     
     let cellSpacingHeight: CGFloat = 5
 
@@ -21,6 +24,9 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         setupAddTargetIsNotEmptyTextFields()
+        tableView.reloadData()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,6 +35,13 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
 //        tableView.allowsSelection = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (selectedOptionFromHearAboutUsOptions != nil) {
+            howDidYouHearAboutUsCell.detailTextLabel?.text = selectedOptionFromHearAboutUsOptions!
+        }
+//        print("Error saving done status, \(selectedOptionFromHearAboutUsOptions))")
     }
     
     // how to add text to disclosure https://stackoverflow.com/a/35400276/3322417
@@ -59,16 +72,6 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Table view data source
 //    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 //        return cellSpacingHeight
-//    }
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "formCell", for: indexPath)
-//
-//        cell.selectionStyle = .none
-//
-//        return cell
-//
 //    }
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {

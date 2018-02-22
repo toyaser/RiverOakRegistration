@@ -8,10 +8,11 @@
 
 import UIKit
 
-class HearAboutUsOptionsTableViewController: UITableViewController {
+class HearAboutUsOptionsTableViewController: UITableViewController, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.delegate = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,6 +36,11 @@ class HearAboutUsOptionsTableViewController: UITableViewController {
 //                checked[indexPath.row] = true
             }
         }
+    }
+    
+//    https://stackoverflow.com/questions/34955987/pass-data-through-navigation-back-button
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        (viewController as? FormTableViewController)?.selectedOptionFromHearAboutUsOptions = "testy"
     }
 
 //    // MARK: - Table view data source
@@ -103,5 +109,13 @@ class HearAboutUsOptionsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "backFromHearAboutUsOptions" {
+//            let destinationVC = segue.destination as! FormTableViewController
+//
+//            destinationVC.selectedOptionFromHearAboutUsOptions = "testy"
+//        }
+//    }
 
 }
