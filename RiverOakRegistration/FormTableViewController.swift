@@ -36,14 +36,7 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
         
 //        tableView.allowsSelection = false
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if (selectedOptionFromHearAboutUsOptions != nil) {
-            howDidYouHearAboutUsCell.detailTextLabel?.text = selectedOptionFromHearAboutUsOptions!
-        }
-//        print("Error saving done status, \(selectedOptionFromHearAboutUsOptions))")
-    }
-    
+        
     // how to add text to disclosure https://stackoverflow.com/a/35400276/3322417
     
     func setupAddTargetIsNotEmptyTextFields() {
