@@ -9,11 +9,23 @@
 import UIKit
 
 class HearAboutUsOptionsTableViewController: UITableViewController, UINavigationControllerDelegate {
-
+    
+    @IBOutlet weak var FacebookTableViewCell: UITableViewCell!
+    @IBOutlet weak var RadioTableViewCell: UITableViewCell!
+    @IBOutlet weak var TVTableViewCell: UITableViewCell!
+    @IBOutlet weak var NewspaperTableViewCell: UITableViewCell!
+    @IBOutlet weak var SignsTableViewCell: UITableViewCell!
+    @IBOutlet weak var WordOfMouthTableViewCell: UITableViewCell!
+    @IBOutlet weak var OtherTableViewCell: UITableViewCell!
+    @IBOutlet weak var OtherSpecifyTextField: UITextField!
+    @IBOutlet weak var OtherPleaseSpecifyCell: UITableViewCell!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.delegate = self
 
+        FacebookTableViewCell.accessoryType = .checkmark
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,15 +40,46 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
-            if cell.accessoryType == .checkmark {
-                cell.accessoryType = .none
-//                checked[indexPath.row] = false
-            } else {
-                cell.accessoryType = .checkmark
-//                checked[indexPath.row] = true
+            if cell.reuseIdentifier != "OtherPleaseSpecifyCell" {
+                if cell.accessoryType == .checkmark {
+                    cell.accessoryType = .none
+    //                checked[indexPath.row] = false
+                } else {
+                    cell.accessoryType = .checkmark
+    //                checked[indexPath.row] = true
+
+                }
             }
+            
+            if cell.textLabel?.text == "Other" {
+                if cell.accessoryType == .checkmark {
+                    OtherPleaseSpecifyCell.isHidden = false
+                    OtherSpecifyTextField.isEnabled = true
+                } else {
+                    OtherPleaseSpecifyCell.isHidden = true
+                    OtherSpecifyTextField.isEnabled = false
+                }
+            }
+            
         }
     }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return itemArray.count;
+//    }
+//
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "hearAboutUsOption", for: indexPath)
+//
+//
+//
+//                cell.textLabel?.text = itemArray[indexPath.row]
+//
+//
+//                cell.accessoryType = .checkmark
+//
+//
+//        return cell
+//    }
     
 //    https://stackoverflow.com/questions/34955987/pass-data-through-navigation-back-button
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {

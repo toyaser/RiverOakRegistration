@@ -308,7 +308,7 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                         <sections>
                             <tableViewSection id="50Z-jA-f89">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="tiK-nJ-10A" style="IBUITableViewCellStyleDefault" id="A4c-dk-JsC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="hearAboutUsOption" textLabel="tiK-nJ-10A" style="IBUITableViewCellStyleDefault" id="A4c-dk-JsC">
                                         <rect key="frame" x="0.0" y="35" width="668" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A4c-dk-JsC" id="4L4-GS-WUk">
@@ -325,7 +325,7 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="sPc-fK-g8c" style="IBUITableViewCellStyleDefault" id="NNM-Je-Bgl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="hearAboutUsOption" textLabel="sPc-fK-g8c" style="IBUITableViewCellStyleDefault" id="NNM-Je-Bgl">
                                         <rect key="frame" x="0.0" y="79" width="668" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NNM-Je-Bgl" id="t2T-1t-ss1">
@@ -342,7 +342,7 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="aV2-L5-2L4" style="IBUITableViewCellStyleDefault" id="l0m-zQ-dZ2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="hearAboutUsOption" textLabel="aV2-L5-2L4" style="IBUITableViewCellStyleDefault" id="l0m-zQ-dZ2">
                                         <rect key="frame" x="0.0" y="123" width="668" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l0m-zQ-dZ2" id="d7Z-eW-V4U">
@@ -359,7 +359,7 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="1cM-ar-4Rp" style="IBUITableViewCellStyleDefault" id="iIH-bb-h3O">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="hearAboutUsOption" textLabel="1cM-ar-4Rp" style="IBUITableViewCellStyleDefault" id="iIH-bb-h3O">
                                         <rect key="frame" x="0.0" y="167" width="668" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iIH-bb-h3O" id="B8t-fw-8Up">
@@ -376,7 +376,7 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="l7O-ks-RHo" style="IBUITableViewCellStyleDefault" id="ksr-lN-hU1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="hearAboutUsOption" textLabel="l7O-ks-RHo" style="IBUITableViewCellStyleDefault" id="ksr-lN-hU1">
                                         <rect key="frame" x="0.0" y="211" width="668" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ksr-lN-hU1" id="gMd-cK-xTh">
@@ -393,7 +393,7 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="IZF-nG-mWe" style="IBUITableViewCellStyleDefault" id="RAS-U2-rJj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="hearAboutUsOption" textLabel="IZF-nG-mWe" style="IBUITableViewCellStyleDefault" id="RAS-U2-rJj">
                                         <rect key="frame" x="0.0" y="255" width="668" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RAS-U2-rJj" id="O7v-ql-Ki0">
@@ -410,7 +410,7 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="YFF-MS-USo" style="IBUITableViewCellStyleDefault" id="I9v-Av-dGu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="hearAboutUsOption" textLabel="YFF-MS-USo" style="IBUITableViewCellStyleDefault" id="I9v-Av-dGu">
                                         <rect key="frame" x="0.0" y="299" width="668" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I9v-Av-dGu" id="6lg-Ih-Oab">
@@ -427,6 +427,28 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OtherPleaseSpecifyCell" rowHeight="51" id="Y8q-Gg-dgE">
+                                        <rect key="frame" x="0.0" y="343" width="668" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y8q-Gg-dgE" id="BiR-tN-am1">
+                                            <rect key="frame" x="0.0" y="0.0" width="668" height="50.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please Specify" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bb-Sk-38X">
+                                                    <rect key="frame" x="20" y="11" width="628" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3bb-Sk-38X" firstAttribute="leading" secondItem="BiR-tN-am1" secondAttribute="leadingMargin" id="GTf-Vj-pIF"/>
+                                                <constraint firstItem="3bb-Sk-38X" firstAttribute="top" secondItem="BiR-tN-am1" secondAttribute="topMargin" id="N2u-gI-kha"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3bb-Sk-38X" secondAttribute="bottom" constant="-1" id="YSq-5P-Hwc"/>
+                                                <constraint firstItem="3bb-Sk-38X" firstAttribute="trailing" secondItem="BiR-tN-am1" secondAttribute="trailingMargin" id="yzd-1W-mpu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -435,10 +457,21 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                             <outlet property="delegate" destination="MjT-mQ-BpE" id="PwF-9i-vKb"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="FacebookTableViewCell" destination="A4c-dk-JsC" id="PUD-o2-h8b"/>
+                        <outlet property="NewspaperTableViewCell" destination="iIH-bb-h3O" id="fix-U8-wwq"/>
+                        <outlet property="OtherPleaseSpecifyCell" destination="Y8q-Gg-dgE" id="aaS-Xd-yyL"/>
+                        <outlet property="OtherSpecifyTextField" destination="3bb-Sk-38X" id="1aR-MV-t3r"/>
+                        <outlet property="OtherTableViewCell" destination="I9v-Av-dGu" id="iH3-Fs-H1d"/>
+                        <outlet property="RadioTableViewCell" destination="NNM-Je-Bgl" id="HIW-zk-Lt0"/>
+                        <outlet property="SignsTableViewCell" destination="ksr-lN-hU1" id="8eT-xK-uSR"/>
+                        <outlet property="TVTableViewCell" destination="l0m-zQ-dZ2" id="k90-J2-M28"/>
+                        <outlet property="WordOfMouthTableViewCell" destination="RAS-U2-rJj" id="5qc-up-UsZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0to-a9-I9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="1451"/>
+            <point key="canvasLocation" x="1026.5625" y="1450.78125"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="KeP-cw-HAE">
