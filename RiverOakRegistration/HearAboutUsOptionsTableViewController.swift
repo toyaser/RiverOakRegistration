@@ -67,6 +67,7 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
 //    https://stackoverflow.com/questions/34955987/pass-data-through-navigation-back-button
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         (viewController as? FormTableViewController)?.howDidYouHearAboutUsCell.detailTextLabel?.text = "testy"
+        (viewController as? FormTableViewController)?.enableIAgree()
     }
 
 //    // MARK: - Table view data source

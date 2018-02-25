@@ -94,17 +94,18 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    func enableIAgree() -> Bool {
+    func enableIAgree() {
         guard
             let name = nameUserTextField.text, !name.isEmpty,
             let postalCode = postalCodeTextField.text, !postalCode.isEmpty,
             let email = emailTextField.text, !email.isEmpty,
             let hearAboutUsOption = howDidYouHearAboutUsCell.detailTextLabel?.text, hearAboutUsOption != "Please Select"
             else {
-                return false
+                agreeButton.isEnabled = false
+                return
             }
         
-        return true
+        agreeButton.isEnabled = true
     }
     
     @objc func editingChanged(_ textField: UITextField) {
@@ -115,11 +116,7 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
             return
         }
         
-        if enableIAgree() {
-            agreeButton.isEnabled = true
-        } else {
-            agreeButton.isEnabled = false
-        }
+        enableIAgree()
         
 //        guard
 //            let name = nameUserTextField.text, !name.isEmpty,
