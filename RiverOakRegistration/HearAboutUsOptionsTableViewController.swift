@@ -23,9 +23,11 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
     var numberOfSelectedRows = 0
     var textToDisplayOnBack = ""
     
+    let indexOfOtherRow = 6
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupHearAboutUsOptions()
+        
         navigationController?.delegate = self
 
 //        FacebookTableViewCell.accessoryType = .checkmark
@@ -36,36 +38,18 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    func setupHearAboutUsOptions() {
-        if selectedOptionsFromHearAboutUsOptions[0] {
-            FacebookTableViewCell.accessoryType = .checkmark
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let selectedOptionsIdxs = selectedOptionsFromHearAboutUsOptions.enumerated().filter{ $1 }.map { $0.offset }
+        
+        if selectedOptionsIdxs.contains(indexPath.item) {
+            cell.accessoryType = .checkmark
             numberOfSelectedRows = numberOfSelectedRows + 1
-        }
-        if selectedOptionsFromHearAboutUsOptions[1] {
-            RadioTableViewCell.accessoryType = .checkmark
-            numberOfSelectedRows = numberOfSelectedRows + 1
-        }
-        if selectedOptionsFromHearAboutUsOptions[2] {
-            TVTableViewCell.accessoryType = .checkmark
-            numberOfSelectedRows = numberOfSelectedRows + 1
-        }
-        if selectedOptionsFromHearAboutUsOptions[3] {
-            NewspaperTableViewCell.accessoryType = .checkmark
-            numberOfSelectedRows = numberOfSelectedRows + 1
-        }
-        if selectedOptionsFromHearAboutUsOptions[4] {
-            SignsTableViewCell.accessoryType = .checkmark
-            numberOfSelectedRows = numberOfSelectedRows + 1
-        }
-        if selectedOptionsFromHearAboutUsOptions[5] {
-            WordOfMouthTableViewCell.accessoryType = .checkmark
-            numberOfSelectedRows = numberOfSelectedRows + 1
-        }
-        if selectedOptionsFromHearAboutUsOptions[6] {
-            OtherTableViewCell.accessoryType = .checkmark
-            OtherSpecifyTextField.isHidden = false
-            OtherSpecifyTextField.text = selectedOptionOtherText
-            numberOfSelectedRows = numberOfSelectedRows + 1
+            
+            if indexPath.item == indexOfOtherRow {
+                OtherSpecifyTextField.isHidden = false
+                OtherSpecifyTextField.text = selectedOptionOtherText
+            }
         }
     }
 
@@ -82,16 +66,13 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
                 cell.isSelected = false
                 numberOfSelectedRows = numberOfSelectedRows - 1
                 selectedOptionsFromHearAboutUsOptions[indexPath.row] = false
-//                checked[indexPath.row] = false
             } else {
                 cell.accessoryType = .checkmark
                 cell.isSelected = true
                 numberOfSelectedRows = numberOfSelectedRows + 1
-                 selectedOptionsFromHearAboutUsOptions[indexPath.row] = true
-//                checked[indexPath.row] = true
+                selectedOptionsFromHearAboutUsOptions[indexPath.row] = true
 
             }
-            
             
             if cell.reuseIdentifier == "HearAbouUsOtherCell" {
                 if cell.accessoryType == .checkmark {
@@ -104,9 +85,6 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
                     OtherSpecifyTextField.isEnabled = false
                 }
             }
-            
-            print(numberOfSelectedRows)
-           
         }
     }
     
@@ -129,7 +107,7 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
                 let index = selectedOptionsFromHearAboutUsOptions.startIndex.distance(to: i)
                 let indexPath =  IndexPath(row: index, section: 0)
                 if let cell = tableView.cellForRow(at: indexPath) {
-                    if index != 6 {
+                    if index != indexOfOtherRow {
                         textToDisplayOnBack = (cell.textLabel?.text)!
                         
                     } else {
