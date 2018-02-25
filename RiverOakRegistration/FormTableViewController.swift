@@ -10,7 +10,7 @@ import UIKit
 
 class FormTableViewController: UITableViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    @IBOutlet weak var agreeButton: UIBarButtonItem!
     @IBOutlet weak var nameUserTextField: UITextField!
     @IBOutlet weak var postalCodeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -40,7 +40,7 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
     // how to add text to disclosure https://stackoverflow.com/a/35400276/3322417
     
     func setupAddTargetIsNotEmptyTextFields() {
-        doneBarButton.isEnabled = false
+        agreeButton.isEnabled = false
         //
         //        headerView.clipsToBounds = true
         //        headerView.layer.cornerRadius = 5
@@ -94,6 +94,19 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    func enableIAgree() -> Bool {
+        guard
+            let name = nameUserTextField.text, !name.isEmpty,
+            let postalCode = postalCodeTextField.text, !postalCode.isEmpty,
+            let email = emailTextField.text, !email.isEmpty,
+            let hearAboutUsOption = howDidYouHearAboutUsCell.detailTextLabel?.text, hearAboutUsOption != "Please Select"
+            else {
+                return false
+            }
+        
+        return true
+    }
+    
     @objc func editingChanged(_ textField: UITextField) {
         if (nameUserTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty)! &&
             (postalCodeTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty)! &&
@@ -101,15 +114,36 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
             // string contains non-whitespace characters
             return
         }
-        guard
-            let name = nameUserTextField.text, !name.isEmpty,
-            let postalCode = postalCodeTextField.text, !postalCode.isEmpty,
-            let email = emailTextField.text, !email.isEmpty
-        else {
-                doneBarButton.isEnabled = false
-                return
+        
+        if enableIAgree() {
+            agreeButton.isEnabled = true
+        } else {
+            agreeButton.isEnabled = false
         }
-        doneBarButton.isEnabled = true
+        
+//        guard
+//            let name = nameUserTextField.text, !name.isEmpty,
+//            let postalCode = postalCodeTextField.text, !postalCode.isEmpty,
+//            let email = emailTextField.text, !email.isEmpty,
+//            let hearAboutUsOption = howDidYouHearAboutUsCell.detailTextLabel?.text, hearAboutUsOption != "Please Select"
+//        else {
+//                agreeButton.isEnabled = false
+//                return
+//        }
+//        agreeButton.isEnabled = true
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            if cell.reuseIdentifier == "RegistrationNameCell" {
+                nameUserTextField.becomeFirstResponder()
+            } else if cell.reuseIdentifier == "RegistrationPostalCodeCell" {
+                postalCodeTextField.becomeFirstResponder()
+            } else if cell.reuseIdentifier == "RegistrationEmailCell" {
+                emailTextField.becomeFirstResponder()
+            }
+            
+        }
     }
 
     /*
