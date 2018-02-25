@@ -16,7 +16,8 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var howDidYouHearAboutUsCell: UITableViewCell!
     
-    var selectedOptionFromHearAboutUsOptions : String?
+    var selectedOptionsFromHearAboutUsOptions = Array(repeating: false, count: 7)
+    var selectedOptionOtherText = ""
     
     let cellSpacingHeight: CGFloat = 5
 
@@ -60,6 +61,16 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToFromHearAboutUsOptions" {
+            
+            let destinationVC = segue.destination as! HearAboutUsOptionsTableViewController
+            
+            destinationVC.selectedOptionsFromHearAboutUsOptions = self.selectedOptionsFromHearAboutUsOptions
+            destinationVC.selectedOptionOtherText = self.selectedOptionOtherText
+        }
     }
 
     // MARK: - Table view data source

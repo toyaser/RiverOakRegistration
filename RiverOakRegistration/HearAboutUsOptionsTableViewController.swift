@@ -18,18 +18,55 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
     @IBOutlet weak var WordOfMouthTableViewCell: UITableViewCell!
     @IBOutlet weak var OtherTableViewCell: UITableViewCell!
     @IBOutlet weak var OtherSpecifyTextField: UITextField!
-    
+    var selectedOptionsFromHearAboutUsOptions = Array(repeating: false, count: 7)
+    var selectedOptionOtherText = ""
+    var numberOfSelectedRows = 0
+    var textToDisplayOnBack = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupHearAboutUsOptions()
         navigationController?.delegate = self
 
-        FacebookTableViewCell.accessoryType = .checkmark
+//        FacebookTableViewCell.accessoryType = .checkmark
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func setupHearAboutUsOptions() {
+        if selectedOptionsFromHearAboutUsOptions[0] {
+            FacebookTableViewCell.accessoryType = .checkmark
+            numberOfSelectedRows = numberOfSelectedRows + 1
+        }
+        if selectedOptionsFromHearAboutUsOptions[1] {
+            RadioTableViewCell.accessoryType = .checkmark
+            numberOfSelectedRows = numberOfSelectedRows + 1
+        }
+        if selectedOptionsFromHearAboutUsOptions[2] {
+            TVTableViewCell.accessoryType = .checkmark
+            numberOfSelectedRows = numberOfSelectedRows + 1
+        }
+        if selectedOptionsFromHearAboutUsOptions[3] {
+            NewspaperTableViewCell.accessoryType = .checkmark
+            numberOfSelectedRows = numberOfSelectedRows + 1
+        }
+        if selectedOptionsFromHearAboutUsOptions[4] {
+            SignsTableViewCell.accessoryType = .checkmark
+            numberOfSelectedRows = numberOfSelectedRows + 1
+        }
+        if selectedOptionsFromHearAboutUsOptions[5] {
+            WordOfMouthTableViewCell.accessoryType = .checkmark
+            numberOfSelectedRows = numberOfSelectedRows + 1
+        }
+        if selectedOptionsFromHearAboutUsOptions[6] {
+            OtherTableViewCell.accessoryType = .checkmark
+            OtherSpecifyTextField.isHidden = false
+            OtherSpecifyTextField.text = selectedOptionOtherText
+            numberOfSelectedRows = numberOfSelectedRows + 1
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,9 +79,15 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
             
             if cell.accessoryType == .checkmark {
                 cell.accessoryType = .none
+                cell.isSelected = false
+                numberOfSelectedRows = numberOfSelectedRows - 1
+                selectedOptionsFromHearAboutUsOptions[indexPath.row] = false
 //                checked[indexPath.row] = false
             } else {
                 cell.accessoryType = .checkmark
+                cell.isSelected = true
+                numberOfSelectedRows = numberOfSelectedRows + 1
+                 selectedOptionsFromHearAboutUsOptions[indexPath.row] = true
 //                checked[indexPath.row] = true
 
             }
@@ -61,13 +104,45 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
                     OtherSpecifyTextField.isEnabled = false
                 }
             }
+            
+            print(numberOfSelectedRows)
+           
         }
     }
     
 //    https://stackoverflow.com/questions/34955987/pass-data-through-navigation-back-button
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        (viewController as? FormTableViewController)?.howDidYouHearAboutUsCell.detailTextLabel?.text = "testy"
-        (viewController as? FormTableViewController)?.enableIAgree()
+        if let vc = (viewController as? FormTableViewController) {
+            vc.selectedOptionsFromHearAboutUsOptions = self.selectedOptionsFromHearAboutUsOptions
+            vc.selectedOptionOtherText = self.OtherSpecifyTextField.text!
+            setupTextToReturn()
+            vc.howDidYouHearAboutUsCell.detailTextLabel?.text = textToDisplayOnBack
+            vc.enableIAgree()
+        }
+    }
+    
+    func setupTextToReturn() {
+        if numberOfSelectedRows == 0 {
+            textToDisplayOnBack = "Please Specify"
+        } else if numberOfSelectedRows == 1 {
+            if let i = selectedOptionsFromHearAboutUsOptions.index(of: true) {
+                let index = selectedOptionsFromHearAboutUsOptions.startIndex.distance(to: i)
+                let indexPath =  IndexPath(row: index, section: 0)
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    if index != 6 {
+                        textToDisplayOnBack = (cell.textLabel?.text)!
+                        
+                    } else {
+                        textToDisplayOnBack = "Other"
+                    }
+                }
+                
+            }
+        } else if numberOfSelectedRows > 1 {
+            textToDisplayOnBack = "Multiple"
+        } else {
+            textToDisplayOnBack = "Please Specify"
+        }
     }
 
 //    // MARK: - Table view data source
