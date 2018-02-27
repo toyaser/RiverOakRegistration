@@ -210,8 +210,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZ8-eX-KU7">
                                                     <rect key="frame" x="587" y="6" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.31671053171157837" green="0.61358195543289185" blue="0.7350354790687561" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to recieve email updates?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVn-dk-e7Q">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to receive email updates?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVn-dk-e7Q">
                                                     <rect key="frame" x="20" y="0.0" width="310" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="cFk-ZF-8KE"/>
@@ -227,6 +228,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="AZ8-eX-KU7" secondAttribute="trailing" constant="12" id="F0r-7J-H8y"/>
                                                 <constraint firstItem="AZ8-eX-KU7" firstAttribute="centerY" secondItem="WVn-dk-e7Q" secondAttribute="centerY" id="JYa-n9-iQa"/>
                                                 <constraint firstItem="WVn-dk-e7Q" firstAttribute="top" secondItem="kns-UF-p5p" secondAttribute="top" id="ccC-ap-8xf"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WVn-dk-e7Q" secondAttribute="trailingMargin" id="iLD-Td-Xcp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -307,7 +309,11 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                 <action selector="dismissPopup:" destination="6yF-Le-eXI" id="KZn-ni-yg6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="I Agree" id="K7g-7D-mny"/>
+                        <barButtonItem key="rightBarButtonItem" title="I Agree" id="K7g-7D-mny">
+                            <connections>
+                                <action selector="agreeAction:" destination="6yF-Le-eXI" id="Msm-xC-GDO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="agreeButton" destination="K7g-7D-mny" id="40P-og-TvP"/>
@@ -456,6 +462,7 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                                 <constraint firstItem="zZk-yg-NWX" firstAttribute="centerY" secondItem="6lg-Ih-Oab" secondAttribute="centerY" id="UoV-vW-Aa8"/>
                                                 <constraint firstItem="zZk-yg-NWX" firstAttribute="top" secondItem="6lg-Ih-Oab" secondAttribute="top" id="tBM-HZ-ioL"/>
                                                 <constraint firstItem="zZk-yg-NWX" firstAttribute="leading" secondItem="6lg-Ih-Oab" secondAttribute="leadingMargin" id="wki-eS-Nzx"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zZk-yg-NWX" secondAttribute="trailingMargin" id="xCE-TU-NZh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

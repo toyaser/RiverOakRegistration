@@ -101,6 +101,29 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
         return true
     }
     
+    func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
+    
+    @IBAction func agreeAction(_ sender: Any) {
+        if !isValidEmail(testStr: emailTextField.text!) {
+            let alert = UIAlertController(title: "Invalid Email", message: "Please enter a valid email address", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let successAlert = UIAlertController(title: "Thank you", message: "Enjoy your stay", preferredStyle: UIAlertControllerStyle.alert)
+            successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                action in
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            }))
+            self.present(successAlert, animated: true, completion: nil)
+        }
+    }
     @IBAction func dismissPopup(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
