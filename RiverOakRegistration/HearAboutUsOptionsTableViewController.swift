@@ -106,7 +106,7 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
     
     func setupTextToReturn() {
         if numberOfSelectedRows == 0 {
-            textToDisplayOnBack = "Please Specify"
+            textToDisplayOnBack = "Please Select"
         } else if numberOfSelectedRows == 1 {
             if let i = selectedOptionsFromHearAboutUsOptions.index(of: true) {
                 let index = selectedOptionsFromHearAboutUsOptions.startIndex.distance(to: i)
@@ -124,7 +124,7 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
         } else if numberOfSelectedRows > 1 {
             textToDisplayOnBack = "Multiple"
         } else {
-            textToDisplayOnBack = "Please Specify"
+            textToDisplayOnBack = "Please Select"
         }
     }
 
