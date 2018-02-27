@@ -442,12 +442,6 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                             <rect key="frame" x="0.0" y="0.0" width="668" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please Specify" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WMT-OE-KxM">
-                                                    <rect key="frame" x="136" y="7" width="512" height="30"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZk-yg-NWX">
                                                     <rect key="frame" x="20" y="0.0" width="44" height="44"/>
                                                     <constraints>
@@ -459,13 +453,33 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="WMT-OE-KxM" secondAttribute="bottom" constant="-4" id="FP2-na-Man"/>
-                                                <constraint firstItem="WMT-OE-KxM" firstAttribute="leading" secondItem="zZk-yg-NWX" secondAttribute="trailing" constant="72" id="FqF-mk-Uax"/>
-                                                <constraint firstItem="WMT-OE-KxM" firstAttribute="trailing" secondItem="6lg-Ih-Oab" secondAttribute="trailingMargin" id="NVe-v6-ni8"/>
                                                 <constraint firstItem="zZk-yg-NWX" firstAttribute="centerY" secondItem="6lg-Ih-Oab" secondAttribute="centerY" id="UoV-vW-Aa8"/>
-                                                <constraint firstItem="zZk-yg-NWX" firstAttribute="centerY" secondItem="WMT-OE-KxM" secondAttribute="centerY" id="eEr-09-5yH"/>
                                                 <constraint firstItem="zZk-yg-NWX" firstAttribute="top" secondItem="6lg-Ih-Oab" secondAttribute="top" id="tBM-HZ-ioL"/>
                                                 <constraint firstItem="zZk-yg-NWX" firstAttribute="leading" secondItem="6lg-Ih-Oab" secondAttribute="leadingMargin" id="wki-eS-Nzx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OtherSpecifyCell" id="FT9-pP-NN6">
+                                        <rect key="frame" x="0.0" y="343" width="668" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FT9-pP-NN6" id="btg-Dn-HXk">
+                                            <rect key="frame" x="0.0" y="0.0" width="668" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please Specify" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2wm-yJ-rbM">
+                                                    <rect key="frame" x="20" y="-1" width="628" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="YcJ-Jv-wER"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2wm-yJ-rbM" firstAttribute="trailing" secondItem="btg-Dn-HXk" secondAttribute="trailingMargin" id="DFO-KL-R8Y"/>
+                                                <constraint firstItem="2wm-yJ-rbM" firstAttribute="centerY" secondItem="btg-Dn-HXk" secondAttribute="centerY" id="Pc8-p4-5Sf"/>
+                                                <constraint firstItem="2wm-yJ-rbM" firstAttribute="leading" secondItem="btg-Dn-HXk" secondAttribute="leadingMargin" id="eLb-vj-d8h"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -480,7 +494,8 @@ Fusce in mauris non neque rhoncus suscipit. Donec pulvinar ultrices eleifend. Do
                     <connections>
                         <outlet property="FacebookTableViewCell" destination="A4c-dk-JsC" id="PUD-o2-h8b"/>
                         <outlet property="NewspaperTableViewCell" destination="iIH-bb-h3O" id="fix-U8-wwq"/>
-                        <outlet property="OtherSpecifyTextField" destination="WMT-OE-KxM" id="QMA-no-QIJ"/>
+                        <outlet property="OtherSpecifyTableViewCell" destination="FT9-pP-NN6" id="rib-GE-KSC"/>
+                        <outlet property="OtherSpecifyTextField" destination="2wm-yJ-rbM" id="2aX-mx-bX6"/>
                         <outlet property="OtherTableViewCell" destination="I9v-Av-dGu" id="iH3-Fs-H1d"/>
                         <outlet property="RadioTableViewCell" destination="NNM-Je-Bgl" id="HIW-zk-Lt0"/>
                         <outlet property="SignsTableViewCell" destination="ksr-lN-hU1" id="8eT-xK-uSR"/>

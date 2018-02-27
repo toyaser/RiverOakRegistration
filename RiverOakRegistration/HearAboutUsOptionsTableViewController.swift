@@ -18,11 +18,12 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
     @IBOutlet weak var WordOfMouthTableViewCell: UITableViewCell!
     @IBOutlet weak var OtherTableViewCell: UITableViewCell!
     @IBOutlet weak var OtherSpecifyTextField: UITextField!
-    var selectedOptionsFromHearAboutUsOptions = Array(repeating: false, count: 7)
+    @IBOutlet weak var OtherSpecifyTableViewCell: UITableViewCell!
+    
     var selectedOptionOtherText = ""
     var numberOfSelectedRows = 0
     var textToDisplayOnBack = ""
-    
+    var selectedOptionsFromHearAboutUsOptions = Array(repeating: false, count: 8)
     let indexOfOtherRow = 6
     
     override func viewDidLoad() {
@@ -49,6 +50,7 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
             if indexPath.item == indexOfOtherRow {
                 OtherSpecifyTextField.isHidden = false
                 OtherSpecifyTextField.text = selectedOptionOtherText
+                OtherSpecifyTableViewCell.isHidden = false
             }
         }
     }
@@ -60,29 +62,32 @@ class HearAboutUsOptionsTableViewController: UITableViewController, UINavigation
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
-            
-            if cell.accessoryType == .checkmark {
-                cell.accessoryType = .none
-                cell.isSelected = false
-                numberOfSelectedRows = numberOfSelectedRows - 1
-                selectedOptionsFromHearAboutUsOptions[indexPath.row] = false
-            } else {
-                cell.accessoryType = .checkmark
-                cell.isSelected = true
-                numberOfSelectedRows = numberOfSelectedRows + 1
-                selectedOptionsFromHearAboutUsOptions[indexPath.row] = true
-
-            }
-            
-            if cell.reuseIdentifier == "HearAbouUsOtherCell" {
+            if cell.reuseIdentifier != "OtherSpecifyCell" {
                 if cell.accessoryType == .checkmark {
-                    OtherSpecifyTextField.isHidden = false
-                    OtherSpecifyTextField.isEnabled = true
-                    self.OtherSpecifyTextField.becomeFirstResponder()
+                    cell.accessoryType = .none
+                    cell.isSelected = false
+                    numberOfSelectedRows = numberOfSelectedRows - 1
+                    selectedOptionsFromHearAboutUsOptions[indexPath.row] = false
                 } else {
-                    OtherSpecifyTextField.isHidden = true
-                    OtherSpecifyTextField.text = ""
-                    OtherSpecifyTextField.isEnabled = false
+                    cell.accessoryType = .checkmark
+                    cell.isSelected = true
+                    numberOfSelectedRows = numberOfSelectedRows + 1
+                    selectedOptionsFromHearAboutUsOptions[indexPath.row] = true
+
+                }
+                
+                if cell.reuseIdentifier == "HearAbouUsOtherCell" {
+                    if cell.accessoryType == .checkmark {
+                        OtherSpecifyTextField.isHidden = false
+                        OtherSpecifyTextField.isEnabled = true
+                        self.OtherSpecifyTextField.becomeFirstResponder()
+                        OtherSpecifyTableViewCell.isHidden = false
+                    } else {
+                        OtherSpecifyTextField.isHidden = true
+                        OtherSpecifyTextField.text = ""
+                        OtherSpecifyTextField.isEnabled = false
+                        OtherSpecifyTableViewCell.isHidden = true
+                    }
                 }
             }
         }
