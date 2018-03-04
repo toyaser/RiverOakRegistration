@@ -71,6 +71,7 @@
 		43A1C95B203A087600C6BF7A /* RiverOakRegistration */ = {
 			isa = PBXGroup;
 			children = (
+				DF992C52204C4AEE0049D58C /* Controllers */,
 				43DBB24C203A16BD00AFB1FE /* IBDesignables */,
 				43A1C95C203A087600C6BF7A /* AppDelegate.swift */,
 				43A1C95E203A087600C6BF7A /* ViewController.swift */,
@@ -78,9 +79,6 @@
 				43A1C963203A087600C6BF7A /* Assets.xcassets */,
 				43A1C965203A087600C6BF7A /* LaunchScreen.storyboard */,
 				43A1C968203A087600C6BF7A /* Info.plist */,
-				43DBB24F203A1B7400AFB1FE /* PopupViewController.swift */,
-				43CE7576203B6A7600B36916 /* FormTableViewController.swift */,
-				435C902D203E5E3700D49E0B /* HearAboutUsOptionsTableViewController.swift */,
 			);
 			path = RiverOakRegistration;
 			sourceTree = "<group>";
@@ -109,6 +107,16 @@
 				C323C855A0C1C4954A791F30 /* Pods-RiverOakRegistration.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DF992C52204C4AEE0049D58C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43DBB24F203A1B7400AFB1FE /* PopupViewController.swift */,
+				43CE7576203B6A7600B36916 /* FormTableViewController.swift */,
+				435C902D203E5E3700D49E0B /* HearAboutUsOptionsTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
