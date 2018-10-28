@@ -110,12 +110,12 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func agreeAction(_ sender: Any) {
         if !isValidEmail(testStr: emailTextField.text!) {
-            let alert = UIAlertController(title: "Invalid Email", message: "Please enter a valid email address", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Invalid Email", message: "Please enter a valid email address", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            let successAlert = UIAlertController(title: "Thank you", message: "Enjoy your stay", preferredStyle: UIAlertControllerStyle.alert)
-            successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            let successAlert = UIAlertController(title: "Thank you", message: "Enjoy your stay", preferredStyle: UIAlertController.Style.alert)
+            successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
                 action in
                 
                 self.dismiss(animated: true, completion: nil)

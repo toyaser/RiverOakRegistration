@@ -4,7 +4,7 @@ target 'RiverOakRegistration' do
   use_frameworks!
 
   # Pods for RiverOakRegistration
-pod 'RealmSwift', '3.1.1'
+pod 'RealmSwift'
 
 end
 
