@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YPDrawSignatureView
 
 class FormTableViewController: UITableViewController, UITextFieldDelegate {
 
@@ -15,6 +16,7 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var postalCodeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var howDidYouHearAboutUsCell: UITableViewCell!
+    @IBOutlet weak var signatureView: YPDrawSignatureView!
     
     var selectedOptionsFromHearAboutUsOptions = Array(repeating: false, count: 7)
     var selectedOptionOtherText = ""
@@ -28,7 +30,6 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
         tableView.reloadData()
         
         
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,6 +39,10 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
 //        tableView.allowsSelection = false
     }
         
+    @IBAction func clearSignature(_ sender: UIButton) {
+        // This is how the signature gets cleared
+        self.signatureView.clear()
+    }
     // how to add text to disclosure https://stackoverflow.com/a/35400276/3322417
     
     func setupAddTargetIsNotEmptyTextFields() {

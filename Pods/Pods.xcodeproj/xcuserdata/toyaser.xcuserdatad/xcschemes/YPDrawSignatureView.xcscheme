@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FA873CD49A0B05880168D00C2E6CDB5A"
-               BlueprintName = "RealmSwift"
+               BlueprintIdentifier = "31E47BF5A3B79F4D2FF6D545B7E8971B"
+               BlueprintName = "YPDrawSignatureView"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "RealmSwift.framework">
+               BuildableName = "YPDrawSignatureView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

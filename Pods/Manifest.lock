@@ -4,14 +4,23 @@ PODS:
   - Realm/Headers (3.11.1)
   - RealmSwift (3.11.1):
     - Realm (= 3.11.1)
+  - YPDrawSignatureView (1.1.2)
 
 DEPENDENCIES:
   - RealmSwift
+  - YPDrawSignatureView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Realm
+    - RealmSwift
+    - YPDrawSignatureView
 
 SPEC CHECKSUMS:
   Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
   RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
+  YPDrawSignatureView: 0ca1cfcd329b9f4bf74172859f80a47a200a0e0d
 
-PODFILE CHECKSUM: 3042500c61552462254b6781871d507467eae9ab
+PODFILE CHECKSUM: 049886a6342b3e443cc3ffd57a494dbeb32d504b
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
