@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import EPSignature
 
-class FormTableViewController: UITableViewController, UITextFieldDelegate {
+class FormTableViewController: UITableViewController, UITextFieldDelegate, EPSignatureDelegate {
 
     @IBOutlet weak var agreeButton: UIBarButtonItem!
     @IBOutlet weak var nameUserTextField: UITextField!
@@ -16,6 +17,8 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var howDidYouHearAboutUsCell: UITableViewCell!
     @IBOutlet weak var waiverTextView: UITextView!
+    @IBOutlet weak var numberOfDependantsTextField: UITextField!
+    @IBOutlet weak var dependantsSwitch: UISwitch!
     
     var selectedOptionsFromHearAboutUsOptions = Array(repeating: false, count: 7)
     var selectedOptionOtherText = ""
@@ -28,6 +31,7 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
         setupAddTargetIsNotEmptyTextFields()
         tableView.reloadData()
         self.waiverTextView.scrollRangeToVisible(NSMakeRange(0, 0))
+        numberOfDependantsTextField.delegate = self
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,7 +41,27 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
         
 //        tableView.allowsSelection = false
     }
-        
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // only allow numbers for the dependants field
+        if textField == numberOfDependantsTextField {
+            let invalidCharacters = CharacterSet(charactersIn: "123456789").inverted
+            return string.rangeOfCharacter(from: invalidCharacters) == nil
+        }
+        return true
+    }
+    
+    @IBAction func dependantsSwitchChanged(_ sender: UISwitch) {
+        if sender.isOn {
+            numberOfDependantsTextField.isEnabled = true
+            numberOfDependantsTextField.isHidden = false
+            numberOfDependantsTextField.becomeFirstResponder()
+        } else {
+            numberOfDependantsTextField.isEnabled = false
+            numberOfDependantsTextField.isHidden = true
+        }
+    }
+    
     // how to add text to disclosure https://stackoverflow.com/a/35400276/3322417
     
     func setupAddTargetIsNotEmptyTextFields() {
@@ -114,16 +138,31 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            let successAlert = UIAlertController(title: "Thank you", message: "Enjoy your stay", preferredStyle: UIAlertController.Style.alert)
-            successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
-                action in
-                
-                self.dismiss(animated: true, completion: nil)
-                
-            }))
-            self.present(successAlert, animated: true, completion: nil)
+//            let successAlert = UIAlertController(title: "Thank you", message: "Enjoy your stay", preferredStyle: UIAlertController.Style.alert)
+//            successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
+//                action in
+//
+//                self.dismiss(animated: true, completion: nil)
+//
+//            }))
+//            self.present(successAlert, animated: true, completion: nil)
+            
+            let signatureVC = EPSignatureViewController(signatureDelegate: self, showsDate: true, showsSaveSignatureOption: false)
+            signatureVC.subtitleText = "I agree to the terms and conditions"
+            signatureVC.title = "John Doe"
+            let nav = UINavigationController(rootViewController: signatureVC)
+            present(nav, animated: true, completion: nil)
         }
     }
+    
+    func epSignature(_: EPSignatureViewController, didCancel error : NSError) {
+        print("User canceled")
+    }
+    
+    func epSignature(_: EPSignatureViewController, didSign signatureImage : UIImage, boundingRect: CGRect) {
+        print(signatureImage)
+    }
+    
     @IBAction func dismissPopup(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
