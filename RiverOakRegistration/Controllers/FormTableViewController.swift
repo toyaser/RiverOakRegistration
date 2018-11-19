@@ -30,7 +30,7 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate, EPSig
         
         setupAddTargetIsNotEmptyTextFields()
         tableView.reloadData()
-        self.waiverTextView.scrollRangeToVisible(NSMakeRange(0, 0))
+        
         numberOfDependantsTextField.delegate = self
         
         // Uncomment the following line to preserve selection between presentations
@@ -40,6 +40,12 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate, EPSig
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
 //        tableView.allowsSelection = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        self.waiverTextView.scrollRangeToVisible(NSMakeRange(0, 0))
+        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -149,7 +155,7 @@ class FormTableViewController: UITableViewController, UITextFieldDelegate, EPSig
             
             let signatureVC = EPSignatureViewController(signatureDelegate: self, showsDate: true, showsSaveSignatureOption: false)
             signatureVC.subtitleText = "I agree to the terms and conditions"
-            signatureVC.title = "John Doe"
+            signatureVC.title = nameUserTextField.text
             let nav = UINavigationController(rootViewController: signatureVC)
             present(nav, animated: true, completion: nil)
         }
