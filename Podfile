@@ -5,7 +5,7 @@ target 'RiverOakRegistration' do
 
   # Pods for RiverOakRegistration
 pod 'RealmSwift'
-pod 'YPDrawSignatureView'
+pod 'EPSignature'
 
 end
 

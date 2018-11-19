@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double YPDrawSignatureViewVersionNumber;
-FOUNDATION_EXPORT const unsigned char YPDrawSignatureViewVersionString[];
+FOUNDATION_EXPORT double EPSignatureVersionNumber;
+FOUNDATION_EXPORT const unsigned char EPSignatureVersionString[];
 

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DDB3453F7027682118B1B8272B378C17"
-               BlueprintName = "Pods-RiverOakRegistration"
+               BlueprintIdentifier = "457D8B4893F850D4E32DCA537F28EE98"
+               BlueprintName = "EPSignature"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-RiverOakRegistration.framework">
+               BuildableName = "EPSignature.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
